@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
  * EurekaClient（客户端）同时就是：一个内置的、使用轮询(round-robin)负载算法的负载均衡器。
  *
  * @author qiusn
+ * @date 2020-01-10
  */
 @RestController
 public class EurekaClientController {

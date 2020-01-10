@@ -19,4 +19,4 @@ eureka:
   client:
     # 注册的服务地址， 多个用 , 隔开
     serviceUrl:
-      defaultZone: http://localhost:12701/eureka/,http://localhost:9500/eureka/,http://localhost:9600/eureka/
+      defaultZone: http://localhost:13001/eureka/,http://localhost:13002/eureka/,http://localhost:13003/eureka/
