@@ -10,6 +10,7 @@ eureka:
     # 注册实例信息的服务治理中心地址
     serviceUrl:
       defaultZone: http://localhost:5001/eureka/,http://localhost:5002/eureka/,http://localhost:5003/eureka/
+
   instance:
     hostname: eureka-service-name
     # 表从eureka服务器注册表中获取注册信息的时间间隔（s），默认为30秒。 如果要迅速获取服务注册状态，可以缩小该值

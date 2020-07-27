@@ -1,16 +1,14 @@
-server:
-  #服务注册中心端口号
-  port: 5001
-
 spring:
   application:
     #微服务的名称
     name: eureka-server
+  profiles:
+    active: server4
 
 eureka:
   instance:
-    #注册中心实例的主机名称
-    hostname: eureka-service-name
+    # 注册中心实例的主机名称
+    hostname: eureka-service
     # true就可以将IP注册到Eureka Server上，而如果不配置就是机器的主机名。
     prefer-ip-address: false
     # 指定ip
