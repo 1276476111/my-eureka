@@ -10,6 +10,7 @@ import javax.annotation.Resource;
  * 服务消费控制器类，对用户提供服务
  *
  * @author qiusn
+ * @date 2020-07-27
  */
 @RestController
 public class EurekaFeignController {
@@ -21,9 +22,9 @@ public class EurekaFeignController {
     public String feignInfo() throws Exception {
 
         String message = eurekaFeignService.getInfo();
-        if(true){
-            throw new Exception("测试啊");
-        }
+//        if(true){
+//            throw new Exception("测试啊");
+//        }
         return "获取到的信息:" + message;
     }
 

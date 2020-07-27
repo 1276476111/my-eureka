@@ -10,23 +10,36 @@ spring:
 eureka:
   instance:
     #注册中心实例的主机名称
-    hostname: eureka-service
+    hostname: eureka-service-name
     # true就可以将IP注册到Eureka Server上，而如果不配置就是机器的主机名。
     prefer-ip-address: false
     # 指定ip
 #    ip-address: 127.0.5555
   client:
-    register-with-eureka: false #是否向服务注册中心注册自己
-    fetch-registry: false #当前主机是否需要获取注册信息。 默认为true。设为false，不从服务中心检索注册的服务。
-
-    serviceUrl: #服务中心地址
+    # 是否向服务注册中心注册自己
+    register-with-eureka: false
+    # 当前主机是否需要获取注册信息。 默认为true。设为false，不从服务中心检索注册的服务。
+    fetch-registry: false
+    # eureka需要超时连接之前需要等待的时间，默认为5秒
+    eureka-server-connect-timeout-seconds: 5
+    # eureka客户端允许所有eureka服务器连接的总数目，默认是200
+    eureka-server-total-connections: 200
+    # 服务中心地址
+    serviceUrl:
       # 单版eureka注册
 #      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
       # 多eureka版， 3个eureka互相注册
       defaultZone: http://localhost:5001/eureka/,http://localhost:5002/eureka/,http://localhost:5003/eureka/
 
   server:
-    eviction-interval-timer-in-ms: 5000   # 清理间隔（单位毫秒，默认是60*1000）
-    enable-self-preservation: true        # 默认为true，设为false，关闭自我保护
-    # Eureka Server 在运行期间会去统计心跳失败比例在 15 分钟之内是否低于 85%
-    renewal-percent-threshold: 0.49 # 默认是0.85，本地单机测试设为0.49
+    # 清理间隔（单位毫秒，默认是60*1000）
+    eviction-interval-timer-in-ms: 5000
+    # 默认为true，设为false，关闭自我保护
+    enable-self-preservation: true
+    # 默认是0.85，本地单机测试设为0.49 （Eureka Server 在运行期间会去统计心跳失败比例在 15 分钟之内是否低于 85%）
+    renewal-percent-threshold: 0.49
+    # eureka客户端允许eureka服务器主机连接的总数目，默认是50
+    peer-node-total-connections-per-host: 50
+
+
+

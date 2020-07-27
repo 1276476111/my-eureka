@@ -13,7 +13,8 @@ import org.springframework.context.annotation.PropertySource;
  * @date 2020-01-10
  */
 // 启用 eureka client 相关默认配置，在 Edgware 以后的版本该注解可以省略
-@EnableEurekaClient
+//@EnableEurekaClient
+@EnableDiscoveryClient
 @SpringBootApplication
 public class EurekaClientApplication {
 

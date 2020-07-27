@@ -16,15 +16,15 @@ import javax.servlet.http.HttpServletRequest;
  */
 @RestController
 public class EurekaClientController {
-     
+
     @Value("${server.port}")
     private String port;
  
     /**
      * 提供的一个restful服务，返回内容格式：服务协议://服务器地址:服务端口/服务uri
      *
-     * @param request
-     * @return
+     * @param request 用来获取请求服务
+     * @return 服务信息
      */
     @RequestMapping("/info")
     public String info(HttpServletRequest request) {
