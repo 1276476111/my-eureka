@@ -31,4 +31,5 @@ public class EurekaClientController {
         String message = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getServletPath();
         return message;
     }
+
 }

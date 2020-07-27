@@ -1,5 +1,5 @@
 server:
-  port: 52602
+  port: 6002
 
 spring:
   application:
@@ -19,4 +19,4 @@ eureka:
   client:
     # 注册的服务地址， 多个用 , 隔开
     serviceUrl:
-      defaultZone: http://localhost:13001/eureka/,http://localhost:13002/eureka/,http://localhost:13003/eureka/
+      defaultZone: http://localhost:5001/eureka/,http://localhost:5002/eureka/,http://localhost:5003/eureka/

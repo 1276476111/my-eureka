@@ -1,5 +1,5 @@
 server:
-  port: 52620
+  port: 7001
 
 spring:
   application:
@@ -18,7 +18,7 @@ eureka:
     lease-expiration-duration-in-seconds: 10
   client:
     serviceUrl:
-      defaultZone: http://localhost:12701/eureka/
+      defaultZone: http://localhost:5001/eureka/,http://localhost:5002/eureka/,http://localhost:5003/eureka/
 feign:
   hystrix:
     enabled: true

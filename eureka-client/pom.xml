@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>com.qsn</groupId>
+        <artifactId>my-eureka</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath/>
     </parent>
-    <groupId>com.qsn</groupId>
+
     <artifactId>eureka-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>eureka-client</name>
@@ -16,20 +16,16 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <eureka-client.version>RELEASE</eureka-client.version>
-        <spring-boot-starter-web.version>RELEASE</spring-boot-starter-web.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring-boot-starter-web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-            <version>${eureka-client.version}</version>
         </dependency>
     </dependencies>
 
