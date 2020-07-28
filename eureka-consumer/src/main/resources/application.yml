@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-      name: eureka-discovery-feign
+    name: eureka-discovery-feign
 
 eureka:
   client:
