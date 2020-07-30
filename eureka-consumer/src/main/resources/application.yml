@@ -3,7 +3,9 @@ server:
 
 spring:
   application:
-    name: eureka-discovery-feign
+    name: eureka-consumer
+  main:
+    allow-bean-definition-overriding: true
 
 eureka:
   client:
@@ -21,3 +23,12 @@ eureka:
     # 如果该值设置太小了，则instance则很可能因为临时的网络抖动而被摘除掉。
     # 该值至少应该大于 leaseRenewalIntervalInSeconds
     lease-expiration-duration-in-seconds: 10
+
+# 指定哪个模块， 使用哪种负载均衡策略。 经测试不添加此配置也可以，
+#server-client:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule #随机
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.ZoneAvoidanceRule #轮询
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RetryRule #重试
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.WeightedResponseTimeRule #响应时间
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.ZoneAvoidanceRule #复合

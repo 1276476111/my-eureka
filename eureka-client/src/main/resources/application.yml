@@ -1,10 +1,8 @@
 spring:
-  profiles:
-    active: client3
-
-spring:
   application:
     name: eureka-client
+  profiles:
+      active: client3
 
 eureka:
   instance:

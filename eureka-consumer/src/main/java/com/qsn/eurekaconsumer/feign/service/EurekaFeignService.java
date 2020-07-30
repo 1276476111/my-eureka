@@ -19,6 +19,6 @@ public interface EurekaFeignService {
      * @return 自定义字符串
      */
     @RequestMapping(value = "/info")
-    String getInfo();
+    String getClientInfo();
  
 }
