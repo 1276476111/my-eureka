@@ -2,8 +2,10 @@ spring:
   application:
     #微服务的名称
     name: eureka-server
-  profiles:
-    active: server1
+  server:
+    port: 5000
+#  profiles:
+#    active: server2
 
 eureka:
   instance:

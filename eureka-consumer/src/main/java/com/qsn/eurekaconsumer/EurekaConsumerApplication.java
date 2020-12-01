@@ -16,7 +16,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 // 启用 Eureka 服务发现
 @EnableDiscoveryClient
 // 启用 Feign
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.qsn.eurekaconsumer.feign")
+
 /*
     使用自定义负载均衡策略有两种方式：
     二：启动类加 @RibbonClient(name="xxx" configuration="xxx")注解， 并且自定义一个Rule配置策略类

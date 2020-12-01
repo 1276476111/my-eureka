@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qsn.eurekaclient.mapper.UserMapper">
+
+
+    <!-- 用户表通用查询映射结果 -->
+    <resultMap id="UserResultMap" type="com.qsn.eurekaclient.entity.User">
+        <id column="id" property="id"/>
+        <result column="age" property="age"/>
+    </resultMap>
+    <!-- 用户表SQL列 -->
+    <sql id="UserColumnList">
+        id, age
+    </sql>
+    <!-- 用户表分页 -->
+    <select id="listPageUser" resultMap="UserResultMap">
+        SELECT <include refid="UserColumnList"/>
+        FROM t_user
+    </select>
+    <!-- 用户表列表 -->
+    <select id="listUser" resultMap="UserResultMap">
+        SELECT <include refid="UserColumnList"/>
+        FROM t_user
+    </select>
+    <!-- 用户表新增 -->
+    <insert id="insertUser" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO t_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="age!=null and age!=''">
+                 age,
+            </if>
+        </trim>
+        <trim prefix=" VALUES (" suffix=")" suffixOverrides=",">
+            <if test="age!=null and age!=''">
+                 #{age},
+            </if>
+        </trim>
+    </insert>
+    <!-- 用户表修改 -->
+    <update id="updateUserById">
+        UPDATE t_user
+        <set>
+            <if test="age!=null and age!=''">
+                 age=#{age},
+            </if>
+        </set>
+        WHERE id=#{id}
+    </update>
+    <!-- 用户表详情 -->
+    <select id="getUserById" resultMap="UserResultMap">
+        SELECT <include refid="UserColumnList"/>
+        FROM t_user
+        WHERE id=#{id}
+    </select>
+
+
+
+</mapper>
